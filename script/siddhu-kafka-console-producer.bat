@@ -1,0 +1,1 @@
+kafka-console-producer.bat --broker-list localhost:9092 --topic test-consumer-group < C:\to_delete\Apache_Kafka\Input_File.txt
