@@ -38,5 +38,14 @@ public class AppConfigs {
     final static String simple_rebalance_groupName = "SiddhuTopic-simple-rebalance-groupname";
     final static int simple_rebalance_numEvents = 100;
     
+    //Producer for Avro
+    final static String avro_applicationID = "SiddhuAvroApplication";
+    final static String avro_bootstrapServers = "localhost:9092";
+    final static String avro_topicName = "SiddhuAvroTopic";
+    final static String avro_groupName = "SiddhuAvroTopic-groupname";
+    final static String avro_registry_url = "http://localhost:8081";
+    
+    final static int avro_numEvents = 100;
+    
     
 }

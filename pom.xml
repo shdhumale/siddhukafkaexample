@@ -12,14 +12,55 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
-		<kafka.version>2.5.1</kafka.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<kafka.version>5.3.0-ccs</kafka.version>
 		<jackson.version>2.12.0</jackson.version>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- <maven.compiler.source>1.8</maven.compiler.source> <maven.compiler.target>1.8</maven.compiler.target> -->
+		<java.version>1.8</java.version>
+		<confluent.version>5.3.0</confluent.version>
 	</properties>
+	<repositories>
+		<repository>
+			<id>confluent</id>
+			<url>https://packages.confluent.io/maven/</url>
+		</repository>
+	</repositories>
+	<build>
+		<plugins>
+			<!-- Maven Compiler Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
 
-
+			<!-- Maven Avro plugin for generating pojo -->
+			<plugin>
+				<groupId>org.apache.avro</groupId>
+				<artifactId>avro-maven-plugin</artifactId>
+				<version>1.10.1</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>schema</goal>
+						</goals>
+						<configuration>
+							<sourceDirectory>${project.basedir}/src/main/resources/schema/</sourceDirectory>
+							<outputDirectory>${project.basedir}/src/main/java/com/siddhu/kafka/example/siddhukafkaexample/simpleproducer</outputDirectory>
+							<imports>
+								<import>${project.basedir}/src/main/resources/schema/SiddhuUserRecord.avsc</import>
+							</imports>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
 		<dependency>
@@ -34,6 +75,13 @@
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.25</version>
 		</dependency>
+		<!-- Confluent Kafka Avro Serializer -->
+		<!-- https://mvnrepository.com/artifact/io.confluent/kafka-avro-serializer -->
+		<dependency>
+			<groupId>io.confluent</groupId>
+			<artifactId>kafka-avro-serializer</artifactId>
+			<version>${confluent.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -46,5 +94,13 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		<!-- Avro dependency -->
+		<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro</artifactId>
+			<version>1.10.1</version>
+		</dependency>
+
+
 	</dependencies>
 </project>
