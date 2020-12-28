@@ -48,4 +48,11 @@ public class AppConfigs {
     final static int avro_numEvents = 100;
     
     
+    //Producer-consumer for JSON
+    final static String json_applicationID = "SiddhuJsonApplication";
+    final static String json_bootstrapServers = "localhost:9092,localhost:9093";
+    final static String json_topicName = "SiddhuJsonTopic";
+    final static String json_groupName = "SiddhuJsonTopic-groupname";
+    final static String json_registry_url = "http://localhost:8081";
+    
 }
