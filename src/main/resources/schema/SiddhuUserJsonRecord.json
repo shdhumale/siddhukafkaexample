@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "javaType": "com.siddhu.kafka.example.siddhukafkaexample.simpleproducer.SiddhuUserJsonRecord",
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "housenumber": {"type": "number"},
+    "societyname": {"type": "string"},    
+	"pinnumber": {"type": "integer"}    
+  }
+}

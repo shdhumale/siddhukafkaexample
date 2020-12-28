@@ -1,0 +1,10 @@
+{"namespace": "com.siddhu.kafka.example.siddhukafkaexample.simpleproducer",
+"type": "record",
+ "name": "SiddhuUserRecord",
+ "fields": [
+     {"name": "id", "type": "string"},
+     {"name": "username", "type": ["string", "null"]},
+     {"name": "useraddress", "type": ["string", "null"]},
+     {"name": "language", "type": ["string", "null"], "default": "None"}     
+ ]
+}
