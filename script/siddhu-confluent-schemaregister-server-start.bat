@@ -1,0 +1,1 @@
+C:\confluent-community-6.0.1\confluent-6.0.1\bin\windows\schema-registry-start.bat ..\config\confluent-schema-registry.properties

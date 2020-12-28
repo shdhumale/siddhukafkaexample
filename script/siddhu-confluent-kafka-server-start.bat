@@ -1,0 +1,1 @@
+kafka-server-start.bat ..\config\confluent-server.properties
