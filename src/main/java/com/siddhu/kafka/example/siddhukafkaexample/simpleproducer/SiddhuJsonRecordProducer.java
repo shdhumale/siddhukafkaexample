@@ -26,11 +26,11 @@ public class SiddhuJsonRecordProducer {
 		Producer<String, SiddhuUserJsonRecord> producer = new KafkaProducer <>(props);
 		SiddhuUserJsonRecord cr = new SiddhuUserJsonRecord();
 		try{
-			cr.setId("1".toString());
-			cr.setName("SiddhuName");
+			cr.setId("2".toString());
+			cr.setName("SiddhuName2");
 			cr.setHousenumber(601.0);
-			cr.setSocietyname("SiddhuSociety");
-			cr.setPinnumber(1234);
+			cr.setSocietyname("SiddhuSociety2");
+			cr.setPinnumber(90);
 			producer.send(new ProducerRecord<String, SiddhuUserJsonRecord>(AppConfigs.json_topicName,cr.getId().toString(),cr)).get();
 			logger.info("Message send successfully");
 

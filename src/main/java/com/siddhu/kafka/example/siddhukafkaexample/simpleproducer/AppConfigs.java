@@ -55,4 +55,12 @@ public class AppConfigs {
     final static String json_groupName = "SiddhuJsonTopic-groupname";
     final static String json_registry_url = "http://localhost:8081";
     
+    
+    //Stream example
+    final static String stream_applicationID = "SiddhuJsonStreamApplication";
+    final static String stream_bootstrapServers = "localhost:9092,localhost:9093";
+    final static String stream_topicName = "SiddhuJsonTopic";
+    final static String stream_new_topicName = "SiddhuNewJsonTopic";
+    final static String stream_groupName = "SiddhuJsonTopic-groupname";
+    final static String stream_registry_url = "http://localhost:8081";
 }
